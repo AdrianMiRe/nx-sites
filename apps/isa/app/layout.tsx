@@ -1,19 +1,16 @@
 "use client";
 
-import type { Metadata } from "next";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "@repo/graphql/lib/apolloClient";
 
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@mui/material";
+import theme from "./utils/theme";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const orgonRegular = localFont({
+  src: "./fonts/Orgon-Regular.woff",
+  variable: "--font-orgon-regular",
 });
 
 // export const metadata: Metadata = {
@@ -28,8 +25,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ApolloProvider client={client}>{children}</ApolloProvider>
+      <title>ISA LAFAM</title>
+      <meta name="description" content={'Sellers site for ISA LAFAM done in next14'} />
+      <body className={orgonRegular.variable}>
+        <ThemeProvider theme={theme}>
+          <ApolloProvider client={client}>
+            {children}
+          </ApolloProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

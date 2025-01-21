@@ -5,7 +5,17 @@
   "exports": {
     "./button": "./src/button.tsx",
     "./card": "./src/card.tsx",
-    "./code": "./src/code.tsx"
+    "./code": "./src/code.tsx",
+    "./formAutocomplete": "./src/formAutocomplete.tsx",
+    "./formInput": "./src/formInput.tsx",
+    "./spinner": "./src/spinner.tsx",
+    "./toast": "./src/toast.tsx",
+    "./icons": "./src/icons.tsx",
+    "./idleModal": "./src/idleModal.tsx",
+    "./chatbotHeader": "./src/chatbot/header.tsx",
+    "./chatbotAvatar": "./src/chatbot/avatar.tsx",
+    "./chatbotGreetings": "./src/chatbot/greetings.tsx",
+    "./chatbotPaymentS": "./src/chatbot/paymentStatus.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -26,7 +36,11 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@fontsource/roboto": "^5.1.0",
+    "@mui/icons-material": "^6.1.7",
     "@mui/material": "^6.1.6",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-hook-form": "^7.53.2",
+    "react-loader-spinner": "^6.1.6",
+    "react-toastify": "^10.0.6"
   }
 }

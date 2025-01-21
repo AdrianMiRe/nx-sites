@@ -3,18 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "NODE_ENV=development next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.11.9",
-    "@repo/ui": "*",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.7",
     "@repo/graphql": "*",
+    "@repo/ui": "*",
+    "embla-carousel": "^8.5.1",
+    "embla-carousel-react": "^8.5.1",
+    "js-cookie": "^3.0.5",
     "next": "14.2.6",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-chatbot-kit": "^2.2.2",
+    "react-dom": "18.3.1",
+    "react-hook-form": "^7.53.2",
+    "react-idle-timer": "^5.7.2",
+    "react-pro-sidebar": "^1.1.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

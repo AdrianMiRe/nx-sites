@@ -13,6 +13,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "../../packages/graphql/hooks/sidebar/useSidebar.ts", "app/(components)/chatbot/chatbot.jsx", "app/(components)/chatbot/config/config.js", "app/(components)/chatbot/config/actionProvider.jsx", "app/(components)/chatbot/config/messageParser.jsx"  ],
   "exclude": ["node_modules"]
 }

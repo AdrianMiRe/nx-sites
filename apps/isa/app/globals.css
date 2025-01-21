@@ -1,19 +1,50 @@
 :root {
-  --background: #ffffff;
+  --background: #f3f3f3;
   --foreground: #171717;
+  --input-background: #efefef;
+  --shadow-color: #4f4f4f40;
+  --disabled-color: #c5c5c5;
+  --primary-color-dark: #00439E;
+  --primary-color: #005ABB !important;
+  --primary-color-light: #005ABB4D;
+  --primary-color-400: #005ABB66;
+  --primary-color-lighter: #005ABB24;
+  --primary-color-100: #005ABB1A;
+  --secondary-color: #FE5000 !important;
+  --secondary-color-dark: #DF7500;
+  --secondary-color-light: #FE50004D;
+  --secondary-color-lighter: #FE500024;
+  --price-tag-background: #fe5000d3;
+  --price-tag-height: 2rem;
+  --detail-medium-contrast: rgb(234, 234, 234);
+  --detail-high-contrast: rgb(192, 192, 192);
+  --text-high-contrast-rgb-value: 49, 49, 49;
+  --text-body: rgb(54, 49, 61);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --detail-high-contrast: rgb(101, 101, 101);
+    --detail-medium-contrast: rgb(25, 25, 25);
+    --text-high-contrast-rgb-value: 230, 230, 230;
+    --text-body: rgb(222, 222, 222);
   }
+}
+
+@font-face {
+  font-family: 'Orgon';
+  src: url('./fonts/Orgon-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: 'Orgon';
 }
 
 body {
@@ -30,6 +61,105 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.react-chatbot-kit-chat-container {
+  height: 550px !important;
+  width: 350px !important;
+  border-radius: 8px !important;
+}
+
+.react-chatbot-kit-chat-bot-message {
+  width: 80% !important;
+  white-space: break-spaces;
+  font-size: .8rem;
+}
+.react-chatbot-kit-chat-input {
+  font-size: .8rem;
+}
+
+.react-chatbot-kit-chat-inner-container {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 550px;
+}
+
+.react-chatbot-kit-user-chat-message {
+  font-size: .8rem;
+}
+
+.react-chatbot-kit-chat-message-container {
+  height: 470px !important;
+}
+
+.original-price {
+  display: flex !important;
+  justify-content: flex-end !important;
+  text-align: right !important;
+  text-decoration: line-through !important;
+  color: var(--primary-color-400) !important;
+}
+
+.price-tag {
+  background: var(--price-tag-background);
+  color: #fff;
+
+  /* Center the price */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  /* Used to position the triangle */
+  position: relative;
+  transform: skewY(-7deg);
+
+  /* Size */
+  height: var(--price-tag-height);
+
+  /* Spacing */
+  padding: 0.12rem 0.25rem;
+}
+
+/* The triangle */
+.price-tag::before {
+  content: '';
+
+  border-color: transparent var(--price-tag-background) transparent transparent;
+  border-style: solid;
+  border-width: calc(var(--price-tag-height) / 2) calc(var(--price-tag-height) / 2)
+      calc(var(--price-tag-height) / 2) 0rem;
+
+  /* Position */
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  transform: translate(-100%, 0px);
+}
+
+/* The dot */
+.price-tag::after {
+  content: '';
+
+  /* Make it like a cirle */
+  background: #fff;
+  border-radius: 9999rem;
+
+  /* Position */
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-0.5rem, -50%);
+
+  /* Size */
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+.remove-bg {
+  filter: brightness(1);
+  mix-blend-mode: multiply;
 }
 
 @media (prefers-color-scheme: dark) {
